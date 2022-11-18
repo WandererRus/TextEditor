@@ -9,50 +9,57 @@
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="File">
-                <MenuItem Header="Create" InputGestureText="Ctrl+N"></MenuItem>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O"></MenuItem>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S"></MenuItem>
-                <MenuItem Header="Save as.." InputGestureText="Ctrl+Shift+N"></MenuItem>
+                <MenuItem x:Name="main_mi_create" Header="Create" InputGestureText="Ctrl+N"></MenuItem>
+                <MenuItem x:Name="main_mi_open" Header="Open" InputGestureText="Ctrl+O"></MenuItem>
+                <MenuItem x:Name="main_mi_save" Header="Save" InputGestureText="Ctrl+S"></MenuItem>
+                <MenuItem x:Name="main_mi_saveAs" Header="Save as.." InputGestureText="Ctrl+Shift+N"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Settings"></MenuItem>
-                <MenuItem Header="Print" InputGestureText="Ctrl+P"></MenuItem>
+                <MenuItem x:Name="main_mi_settings" Header="Settings"></MenuItem>
+                <MenuItem x:Name="main_mi_print" Header="Print" InputGestureText="Ctrl+P"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Exit"></MenuItem>
+                <MenuItem x:Name="main_mi_exit" Header="Exit"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z"></MenuItem>
+                <MenuItem x:Name="main_mi_undo" Header="Undo" InputGestureText="Ctrl+Z"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X"></MenuItem>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C"></MenuItem>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V"></MenuItem>
-                <MenuItem Header="Delete" InputGestureText="Del"></MenuItem>
+                <MenuItem x:Name="main_mi_cut" Header="Cut" InputGestureText="Ctrl+X"></MenuItem>
+                <MenuItem x:Name="main_mi_copy" Header="Copy" InputGestureText="Ctrl+C"></MenuItem>
+                <MenuItem x:Name="main_mi_paste" Header="Paste" InputGestureText="Ctrl+V"></MenuItem>
+                <MenuItem x:Name="main_mi_delete" Header="Delete" InputGestureText="Del"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Find" InputGestureText="Ctrl+F"></MenuItem>
-                <MenuItem Header="Find next" InputGestureText="F3"></MenuItem>
-                <MenuItem Header="Find prev" InputGestureText="Shift+F3"></MenuItem>
-                <MenuItem Header="Replace..." InputGestureText="Ctrl+H"></MenuItem>
-                <MenuItem Header="Go to..." InputGestureText="Ctrl+G"></MenuItem>
+                <MenuItem x:Name="main_mi_find" Header="Find" InputGestureText="Ctrl+F"></MenuItem>
+                <MenuItem x:Name="main_mi_findNext" Header="Find next" InputGestureText="F3"></MenuItem>
+                <MenuItem x:Name="main_mi_findPrev" Header="Find prev" InputGestureText="Shift+F3"></MenuItem>
+                <MenuItem x:Name="main_mi_replace" Header="Replace..." InputGestureText="Ctrl+H"></MenuItem>
+                <MenuItem x:Name="main_mi_goTo" Header="Go to..." InputGestureText="Ctrl+G"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Select all" InputGestureText="Ctrl+A"></MenuItem>
-                <MenuItem Header="Date and time" InputGestureText="F5"></MenuItem>
+                <MenuItem x:Name="main_mi_selectAll" Header="Select all" InputGestureText="Ctrl+A"></MenuItem>
+                <MenuItem x:Name="main_mi_addDateTime" Header="Date and time" InputGestureText="F5"></MenuItem>
             </MenuItem>
             <MenuItem Header="Format">
-                <MenuItem Header="Wrap"></MenuItem>
-                <MenuItem Header="Font"></MenuItem>
+                <MenuItem x:Name="main_mi_wordWrap" Header="Wrap"></MenuItem>
+                <MenuItem x:Name="main_mi_fontShow" Header="Font"></MenuItem>
             </MenuItem>
             <MenuItem Header="View">
                 <MenuItem Header="Scale">
-                    <MenuItem Header="Grow scale"></MenuItem>
-                    <MenuItem Header="Tiny scale"></MenuItem>
-                    <MenuItem Header="Default scale"></MenuItem>
+                    <MenuItem x:Name="main_mi_growScale" Header="Grow scale"></MenuItem>
+                    <MenuItem x:Name="main_mi_tinyScale" Header="Tiny scale"></MenuItem>
+                    <MenuItem x:Name="main_mi_defaultScale" Header="Default scale"></MenuItem>
                 </MenuItem>
-                <MenuItem Header="Status bar"></MenuItem>
+                <MenuItem x:Name="main_mi_statusBarShow" Header="Status bar"></MenuItem>
             </MenuItem>
-            <MenuItem Header="About" />
+            <MenuItem x:Name="main_mi_about" Header="About" />
         </Menu>
         <ToolBarTray DockPanel.Dock="Top" Height="20">            
         </ToolBarTray>
-        <StatusBar DockPanel.Dock="Bottom" Height="20">            
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock>Ln 1</TextBlock>
+            <Separator></Separator>
+            <TextBlock>Col 1</TextBlock>
+            <Separator></Separator>
+            <TextBlock>100%</TextBlock>
+            <Separator></Separator>
+            <TextBlock>Описание</TextBlock>
         </StatusBar>
         <RichTextBox>            
         </RichTextBox>
