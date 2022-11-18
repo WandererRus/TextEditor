@@ -37,11 +37,18 @@
                 <MenuItem Header="Date and time" InputGestureText="F5"></MenuItem>
             </MenuItem>
             <MenuItem Header="Format">
+                <MenuItem Header="Wrap"></MenuItem>
+                <MenuItem Header="Font"></MenuItem>
             </MenuItem>
             <MenuItem Header="View">
+                <MenuItem Header="Scale">
+                    <MenuItem Header="Grow scale"></MenuItem>
+                    <MenuItem Header="Tiny scale"></MenuItem>
+                    <MenuItem Header="Default scale"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Status bar"></MenuItem>
             </MenuItem>
-            <MenuItem Header="About">
-            </MenuItem>
+            <MenuItem Header="About" />
         </Menu>
         <ToolBarTray DockPanel.Dock="Top" Height="20">            
         </ToolBarTray>
