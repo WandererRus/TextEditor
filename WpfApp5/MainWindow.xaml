@@ -9,15 +9,15 @@
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="File">
-                <MenuItem x:Name="main_mi_create" Header="Create" InputGestureText="Ctrl+N"></MenuItem>
-                <MenuItem x:Name="main_mi_open" Header="Open" InputGestureText="Ctrl+O"></MenuItem>
-                <MenuItem x:Name="main_mi_save" Header="Save" InputGestureText="Ctrl+S"></MenuItem>
-                <MenuItem x:Name="main_mi_saveAs" Header="Save as.." InputGestureText="Ctrl+Shift+N"></MenuItem>
+                <MenuItem x:Name="main_mi_create" Header="Create" InputGestureText="Ctrl+N" Click="main_mi_create_Click"></MenuItem>
+                <MenuItem x:Name="main_mi_open" Header="Open" InputGestureText="Ctrl+O" Click="main_mi_open_Click"></MenuItem>
+                <MenuItem x:Name="main_mi_save" Header="Save" InputGestureText="Ctrl+S" Click="main_mi_save_Click"></MenuItem>
+                <MenuItem x:Name="main_mi_saveAs" Header="Save as.." InputGestureText="Ctrl+Shift+N" Click="main_mi_saveAs_Click"></MenuItem>
                 <Separator></Separator>
-                <MenuItem x:Name="main_mi_settings" Header="Settings"></MenuItem>
-                <MenuItem x:Name="main_mi_print" Header="Print" InputGestureText="Ctrl+P"></MenuItem>
+                <MenuItem x:Name="main_mi_settings" Header="Settings" Click="main_mi_settings_Click"></MenuItem>
+                <MenuItem x:Name="main_mi_print" Header="Print" InputGestureText="Ctrl+P" Click="main_mi_print_Click"></MenuItem>
                 <Separator></Separator>
-                <MenuItem x:Name="main_mi_exit" Header="Exit"></MenuItem>
+                <MenuItem x:Name="main_mi_exit" Header="Exit" Click="main_mi_exit_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem x:Name="main_mi_undo" Header="Undo" InputGestureText="Ctrl+Z"></MenuItem>
@@ -61,7 +61,7 @@
             <Separator></Separator>
             <TextBlock x:Name="sb_tipText">Описание</TextBlock>
         </StatusBar>
-        <RichTextBox x:Name="rtb_editor">            
+        <RichTextBox x:Name="rtb_editor" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" TextChanged="rtb_editor_TextChanged">
         </RichTextBox>
     </DockPanel>
 </Window>

@@ -24,5 +24,47 @@ namespace WpfApp5
         {
             InitializeComponent();
         }
+
+        private void main_mi_create_Click(object sender, RoutedEventArgs e)
+        {
+            rtb_editor.Document.Blocks.Clear();            
+            //TextRange textRange = new TextRange(paragraph.ContentStart, paragraph.ContentEnd);
+            rtb_editor.Document.Blocks.Add(new Paragraph(new Run("я новый документ")));
+        }
+
+        private void main_mi_open_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void main_mi_save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void main_mi_saveAs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void main_mi_settings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void main_mi_print_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void main_mi_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void rtb_editor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
