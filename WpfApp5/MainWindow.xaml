@@ -53,13 +53,13 @@
         <ToolBarTray DockPanel.Dock="Top" Height="20">            
         </ToolBarTray>
         <StatusBar DockPanel.Dock="Bottom">
-            <TextBlock>Ln 1</TextBlock>
+            <TextBlock x:Name="sb_lines">Ln 1</TextBlock>
             <Separator></Separator>
-            <TextBlock>Col 1</TextBlock>
+            <TextBlock x:Name="sb_columns">Col 1</TextBlock>
             <Separator></Separator>
-            <TextBlock>100%</TextBlock>
+            <TextBlock x:Name="sb_scale">100%</TextBlock>
             <Separator></Separator>
-            <TextBlock>Описание</TextBlock>
+            <TextBlock x:Name="sb_tipText">Описание</TextBlock>
         </StatusBar>
         <RichTextBox>            
         </RichTextBox>
