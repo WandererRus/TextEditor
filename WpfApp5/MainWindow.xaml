@@ -61,7 +61,7 @@
             <Separator></Separator>
             <TextBlock x:Name="sb_tipText">Описание</TextBlock>
         </StatusBar>
-        <RichTextBox>            
+        <RichTextBox x:Name="rtb_editor">            
         </RichTextBox>
     </DockPanel>
 </Window>
