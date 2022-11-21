@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,13 +30,24 @@ namespace WpfApp5
         private void main_mi_create_Click(object sender, RoutedEventArgs e)
         {
             rtb_editor.Document.Blocks.Clear();            
-            //TextRange textRange = new TextRange(paragraph.ContentStart, paragraph.ContentEnd);
-            rtb_editor.Document.Blocks.Add(new Paragraph(new Run("я новый документ")));
         }
 
         private void main_mi_open_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                FlowDocument fd = new FlowDocument();
+                StreamReader sr = new StreamReader("document.txt");
+                while (sr.ReadLine() != null)
+                {
+                    fd.Blocks.Add(new Paragraph ( new Run(sr.ReadLine())));
+                }
+                rtb_editor.Document = fd;
+            }
+            catch
+            {
+                
+            }
         }
 
         private void main_mi_save_Click(object sender, RoutedEventArgs e)

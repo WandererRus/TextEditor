@@ -50,7 +50,8 @@
             </MenuItem>
             <MenuItem x:Name="main_mi_about" Header="About" />
         </Menu>
-        <ToolBarTray DockPanel.Dock="Top" Height="20">            
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>123</ToolBar>
         </ToolBarTray>
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock x:Name="sb_lines">Ln 1</TextBlock>
