@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp5"
+        xmlns:local="clr-namespace:WpfApp5"    
         mc:Ignorable="d"
         Title="Текстовый редактор" Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
-            <MenuItem Header="File">
+            <MenuItem x:Name="main_mi_file" Header="File">
                 <MenuItem x:Name="main_mi_create" Header="Create" InputGestureText="Ctrl+N" Click="main_mi_create_Click"></MenuItem>
                 <MenuItem x:Name="main_mi_open" Header="Open" InputGestureText="Ctrl+O" Click="main_mi_open_Click"></MenuItem>
                 <MenuItem x:Name="main_mi_save" Header="Save" InputGestureText="Ctrl+S" Click="main_mi_save_Click"></MenuItem>
@@ -63,6 +63,13 @@
             <TextBlock x:Name="sb_tipText">Описание</TextBlock>
         </StatusBar>
         <RichTextBox x:Name="rtb_editor" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" TextChanged="rtb_editor_TextChanged">
+            <FlowDocument>
+                <Paragraph>
+                    <InlineUIContainer>
+                       
+                    </InlineUIContainer>
+                </Paragraph>
+            </FlowDocument>
         </RichTextBox>
     </DockPanel>
 </Window>

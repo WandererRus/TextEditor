@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
 using System.IO;
-using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace WpfApp5
 {
@@ -25,24 +16,37 @@ namespace WpfApp5
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void main_mi_create_Click(object sender, RoutedEventArgs e)
         {
-            rtb_editor.Document.Blocks.Clear();            
+            //rtb_editor.Document.Blocks.Clear();            
         }
 
         private void main_mi_open_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                FlowDocument fd = new FlowDocument();
-                StreamReader sr = new StreamReader("document.txt");
-                while (sr.ReadLine() != null)
+                
+                OpenFileDialog ofd = new OpenFileDialog();
+                if (ofd.ShowDialog() != null)
                 {
-                    fd.Blocks.Add(new Paragraph ( new Run(sr.ReadLine())));
+
+                    StreamReader sr = new StreamReader(ofd.OpenFile());
+                    FlowDocument fd = new FlowDocument();
+                    string line;
+                    if (sr != null)
+                    {
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            fd.Blocks.Add(new Paragraph(new Run(line)));
+                        }
+                        rtb_editor.Document = fd;
+                        sr.Close();
+                    }
                 }
-                rtb_editor.Document = fd;
+                
             }
             catch
             {
@@ -52,7 +56,16 @@ namespace WpfApp5
 
         private void main_mi_save_Click(object sender, RoutedEventArgs e)
         {
-
+           /* StreamWriter sw = new StreamWriter("document.txt", false ,Encoding.UTF8);
+            foreach (Paragraph block in rtb_editor.Document.Blocks)
+            {
+                foreach (Run r in block.Inlines)
+                {
+                    sw.WriteLine(r.Text);
+                }
+            }             
+            
+            sw.Close();*/
         }
 
         private void main_mi_saveAs_Click(object sender, RoutedEventArgs e)
