@@ -1,10 +1,11 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-
+using System.Windows.Media;
 
 namespace WpfApp5
 {
@@ -92,5 +93,66 @@ namespace WpfApp5
         {
 
         }
+
+        private void main_mi_about_Click(object sender, RoutedEventArgs e)
+        {
+            About about= new About();
+            about.ShowDialog();
+        }
+
+        private void main_mi_statusBarShow_Click(object sender, RoutedEventArgs e)
+        {
+            if (main_mi_statusBarShow.IsChecked != true)
+            {
+                statusBar.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                statusBar.Visibility = Visibility.Visible;
+            }
+            
+        }
+
+        private void main_mi_growScale_Click(object sender, RoutedEventArgs e)
+        {            
+            rtb_scale.ScaleX = rtb_scale.ScaleX + 0.1;
+            rtb_scale.ScaleY = rtb_scale.ScaleY + 0.1;
+            sb_scale.Text = Math.Round(rtb_scale.ScaleX * 100).ToString() + "%";
+            
+        }
+
+        private void main_mi_tinyScale_Click(object sender, RoutedEventArgs e)
+        {
+            rtb_scale.ScaleX = rtb_scale.ScaleX - 0.1;
+            rtb_scale.ScaleY = rtb_scale.ScaleY - 0.1;
+            sb_scale.Text = Math.Round(rtb_scale.ScaleX * 100).ToString() + "%";
+        }
+
+        private void main_mi_defaultScale_Click(object sender, RoutedEventArgs e)
+        {
+            rtb_scale.ScaleX = 1.0;
+            rtb_scale.ScaleY = 1.0;
+            sb_scale.Text = Math.Round(rtb_scale.ScaleX * 100).ToString() + "%";
+        }
+
+        private void main_mi_fontShow_Click(object sender, RoutedEventArgs e)
+        {
+            FontsChoose fonts = new FontsChoose(rtb_editor.FontSize);
+            if (fonts.ShowDialog() == true)
+            {
+                rtb_editor.FontSize = Double.Parse(fonts.FontSize.Text);
+
+                foreach (Paragraph block in rtb_editor.Document.Blocks)
+                {
+                    foreach (Run inline in block.Inlines)
+                    {
+                        inline.FontFamily= (FontFamily)fonts.FontFamily.SelectedItem;
+                    }
+                    
+                }
+            }
+            fonts.Close();
+        }
     }
+            
 }
